@@ -1,0 +1,136 @@
+:root {
+  --color-text: #313131;
+  --color-white: #fff;
+  --color-danger: #dc3545;
+  --color-primary: #007bff;
+  --color-background: #ececec;
+  --color-border: #cccccc;
+  --overlay: rgba(0, 0, 0, 0.5);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+body {
+  color: var(--color-text);
+  background: var(--color-background);
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  cursor: ponter;
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-danger {
+  background: var(--color-danger);
+  color: var(--color-white);
+}
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.list {
+  max-width: 1172px;
+  width: 100%;
+  margin: 20px auto;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 0 16px;
+  gap: 10px;
+}
+
+.list__item {
+  border: 1px solid var(--color-border);
+  padding: 10px 16px;
+  position: relative;
+  background: var(--color-white);
+}
+
+.list__item--edit {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 5px;
+  right: 5px;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  background: transparent;
+}
+
+.list__item--edit:hover {
+  scale: 1.1;
+}
+.list__item--edit img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.modal {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+.modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--overlay);
+}
+.modal__form {
+  background: var(--color-background);
+  max-width: 450px;
+  width: 95%;
+  padding: 10px 16px;
+  z-index: 15;
+}
+.modal__form--title {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.modal__form--input {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  outline: none;
+  border: 1px solid var(--color-border);
+}
+
+.modal__form--buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
